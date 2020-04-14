@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <title>Color-51</title>
+
+  <!-- Grab some style from https://getbootstrap.com/docs/4.4/getting-started/introduction/ -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./main.css">
+
+</head>
+
+<body>
+
+  <main class="container mt-3">
+    <!-- START VUE APP -->
+    <article class="row text-center" id="app">
+
+      <template v-for="step in steps">
+
+        <section class="col-sm-4">
+          <h1> {{step.headerText}}</h1>
+        </section>
+
+        <section class="col-sm-4">
+
+          <fieldset>
+            <label for="red">Red</label>
+            {{step.red}}
+            <input v-model="step.red" id="red" type="range" min="0" max="255" value="102" step="51">
+          </fieldset>
+
+          <fieldset>
+            <label for="green">Green</label>
+            {{step.green}}
+            <input v-model="step.green" id="green" type="range" min="0" max="255" value="255" step="51">
+          </fieldset>
+
+          <fieldset>
+            <label for="blue">Blue</label>
+            {{step.blue}}
+            <input v-model="step.blue" id="blue" type="range" min="0" max="255" value="102" step="51">
+          </fieldset>
+
+        </section>
+
+        <section class="col-sm-4">
+          <canvas  v-model="step.canvas" id="canvas" width="100" height="100" style="border:1px solid #000000;"></canvas>
+        </section>
+      
+
+      </template>
+
+    </article>
+
+  </main>
+
+  <footer class="container mt-3 text-center ">
+    <a href="https://denisecase.github.io/color-51/">Demo</a>
+    &#9670;
+    <a href="https://github.com/denisecase/color-51">Source</a>
+  </footer>
+
+  <!-- See Vue.js Guide at https://vuejs.org/v2/guide/ -->
+  <!-- production version of Vue.js, optimized for size and speed -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
